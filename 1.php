@@ -30,14 +30,4 @@ $addReadigns= $conn->prepare($query);
 $addReadigns->execute([2,rand(0,0),rand(0,0),$date]);
 
 $query = "INSERT INTO `tbl_readings` (applianceID,rCurrent,rVoltage,rDateTime) VALUES (?,?,?,?)";
-$addReadigns= $conn->prepare($query);
-$addReadigns->execute([3,rand(3,5),rand(6,8),$date]);
-
-$query = "INSERT INTO `tbl_readings` (applianceID,rCurrent,rVoltage,rDateTime) VALUES (?,?,?,?)";
-$addReadigns= $conn->prepare($query);
-$addReadigns->execute([4,rand(1,3),rand(1,3),$date]);
-
-$query = "DELETE FROM `tbl_readings` WHERE rDateTime < ?";
-$deleteReadings = $conn->prepare($query);
-$deleteReadings->execute([$datetime]);
 ?>
